@@ -17,3 +17,10 @@ Secara keseluruhan, URI ini menentukan kredensial dan lokasi jaringan yang diper
 ![Slow Subscriber](images/slow.png)
 
 Gambar tersebut menunjukkan tampilan dashboard RabbitMQ yang menampilkan informasi sistem secara real-time, termasuk jumlah antrean (queue) yang aktif, yaitu sebanyak 2 antrean. Jumlah antrean ini menunjukkan ada dua antrean yang telah dibuat dan masih aktif di dalam broker RabbitMQ, baik karena dibuat secara eksplisit oleh aplikasi publisher maupun karena subscriber terhubung ke antrean yang berbeda. Perlu dicatat, angka ini tidak merepresentasikan jumlah pesan yang ada, melainkan hanya jumlah antrean yang tersedia di broker, terlepas dari apakah antrean tersebut sedang kosong atau berisi pesan
+
+## Running at least three subscribers
+
+![rabbitmq](images/3subscribers-rabbitmq.png)
+![terminal](images/3subscribers-terminal.png)
+
+Pada gambar pertama, terlihat bahwa kecepatan pemrosesan antrian meningkat saat terdapat tiga subscriber yang menerima pesan, sehingga jumlah pesan dalam antrian berkurang secara signifikan. Sementara itu, pada gambar kedua, message broker berhasil mendistribusikan pesan-pesan secara merata ke tiga subscriber, dan pesan yang sudah diterima akan dihapus dari antrian.
