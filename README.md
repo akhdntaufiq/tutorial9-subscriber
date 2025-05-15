@@ -11,3 +11,9 @@ String ini adalah URI koneksi yang umum digunakan untuk terhubung ke broker AMQP
    - `5672` adalah nomor port default yang digunakan oleh broker AMQP untuk mendengarkan koneksi masuk.
 
 Secara keseluruhan, URI ini menentukan kredensial dan lokasi jaringan yang diperlukan untuk membuat koneksi ke broker AMQP. Sebagai contoh, URI ini menginstruksikan klien untuk terhubung ke broker yang berjalan di mesin lokal (`localhost`) pada port `5672` dengan menggunakan nama pengguna `guest` dan kata sandi `guest`. 
+
+## Simulation Slow Subscriber
+
+![Slow Subscriber](images/slow.png)
+
+Gambar tersebut menunjukkan tampilan dashboard RabbitMQ yang menampilkan informasi sistem secara real-time, termasuk jumlah antrean (queue) yang aktif, yaitu sebanyak 2 antrean. Jumlah antrean ini menunjukkan ada dua antrean yang telah dibuat dan masih aktif di dalam broker RabbitMQ, baik karena dibuat secara eksplisit oleh aplikasi publisher maupun karena subscriber terhubung ke antrean yang berbeda. Perlu dicatat, angka ini tidak merepresentasikan jumlah pesan yang ada, melainkan hanya jumlah antrean yang tersedia di broker, terlepas dari apakah antrean tersebut sedang kosong atau berisi pesan
